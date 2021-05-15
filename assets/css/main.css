@@ -1,0 +1,141 @@
+:root {
+  --main-color: #3459ce;
+  --white: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--main-color);
+  font-family: "ubuntu", sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  color: var(--white);
+}
+
+h4 {
+  color: var(--white);
+  font-weight: lighter;
+  margin: 1rem 0 0 0;
+}
+.container {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  height: 100vh;
+}
+
+.menu {
+  padding: 1rem;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+  color: var(--white);
+}
+
+.active {
+  background-color: var(--white);
+  width: 80%;
+  color: var(--main-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.no-active {
+  color: var(--white);
+}
+
+.no-active > img {
+  filter: brightness(5);
+}
+
+.link-dark {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/*********** Start Lateral Menu **********/
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__company-img {
+  height: 80px;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.header__company-img img {
+  height: 100%;
+}
+
+.header__icons {
+  display: flex;
+  align-items: center;
+}
+
+.header__icons img {
+  margin: 0 1rem;
+}
+
+.description {
+  border: 1px solid aquamarine;
+  height: 100vh;
+}
+
+.nav__btn {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.nav__btn img {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.split-line {
+  border-bottom: 1px solid var(--white);
+}
+
+.footer__cards-icons {
+  display: flex;
+  align-items: center;
+}
+
+.footer__cards-icons img {
+  margin-right: 0.5rem;
+}
+
+.footer__cards-icons--stripe {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--white);
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+}
+
+.footer__cards-icons--stripe h5 {
+  color: var(--white);
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.footer-container {
+  margin-top: 10rem;
+}
+
+.footer-logo {
+  margin-bottom: 1rem;
+}
