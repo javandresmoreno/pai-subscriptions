@@ -1,6 +1,11 @@
 :root {
   --main-color: #3459ce;
   --white: #fff;
+  --active: #c1fdda;
+  --active-font: #01a775;
+  --main-button: #4e77ff;
+  --canceled: rgb(255, 218, 238);
+  --canceled-font: rgb(255, 0, 85);
 }
 
 body {
@@ -13,7 +18,14 @@ body {
 }
 
 h1 {
-  color: var(--white);
+  color: var(--main-color);
+  font-size: 1.4rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+h3 {
+  color: var(--main-color);
+  margin: 0.3rem 0 0 0;
 }
 
 h4 {
@@ -21,9 +33,14 @@ h4 {
   font-weight: lighter;
   margin: 1rem 0 0 0;
 }
+
+/* --------------------------------------------/
+|                   UTILITIES 
+\* -------------------------------------------*/
+
 .container {
   display: grid;
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 30% 70%;
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 2rem;
@@ -62,6 +79,58 @@ h4 {
   text-decoration: none;
 }
 
+.white-title {
+  margin-top: 2rem;
+  color: var(--white);
+}
+
+.active-btn {
+  background-color: var(--active);
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: var(--active-font);
+  margin-left: 2rem;
+}
+
+.canceled-btn {
+  background-color: var(--canceled);
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: var(--canceled-font);
+  margin-left: 2rem;
+}
+
+.main-btn {
+  background-color: var(--main-button);
+  padding: 1rem 2rem 1rem 2rem;
+  float: right;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--white);
+  letter-spacing: 0.1rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
+.secondary-btn {
+  position: relative;
+  left: 25%;
+  background-color: var(--white);
+  padding: 1rem 2rem 1rem 2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--main-button);
+  letter-spacing: 0.1rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
 /*********** Start Lateral Menu **********/
 
 .header {
@@ -89,11 +158,6 @@ h4 {
 
 .header__icons img {
   margin: 0 1rem;
-}
-
-.description {
-  border: 1px solid aquamarine;
-  height: 100vh;
 }
 
 .nav__btn {
@@ -138,4 +202,52 @@ h4 {
 
 .footer-logo {
   margin-bottom: 1rem;
+}
+
+/*************** End Lateral Menu **************/
+
+/*********** Start Description Section **********/
+
+.description-container {
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  height: fit-content;
+}
+
+.subscription-card {
+  display: grid;
+  grid-template-columns: minmax(150px, 30%) 1fr;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px -1px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2.5rem;
+}
+
+.info-container {
+  padding: 1rem;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem 0 0rem 1rem;
+}
+
+.subscription-title {
+  display: flex;
+  align-items: center;
+}
+
+.price-frequency {
+  display: flex;
+}
+
+.price-frequency > div {
+  margin-right: 2rem;
+}
+
+.price-frequency small {
+  font-size: 0.7rem;
 }
