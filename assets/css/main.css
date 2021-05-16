@@ -1,11 +1,13 @@
 :root {
   --main-color: #3459ce;
+  --soft-color: #c3d1ff;
   --white: #fff;
   --active: #c1fdda;
   --active-font: #01a775;
   --main-button: #4e77ff;
   --canceled: rgb(255, 218, 238);
   --canceled-font: rgb(255, 0, 85);
+  --no-active: #808080;
 }
 
 body {
@@ -20,6 +22,12 @@ body {
 h1 {
   color: var(--main-color);
   font-size: 1.4rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+h2 {
+  color: var(--main-color);
+  font-size: 1.2rem;
   margin: 0.5rem 0 0.5rem 0;
 }
 
@@ -131,6 +139,28 @@ h4 {
   margin-top: 2rem;
 }
 
+.split-line {
+  border-bottom: 1px solid var(--white);
+}
+
+.split-line-blue {
+  border-bottom: 1px solid var(--soft-color);
+  margin: 3rem 0;
+}
+.title-active {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--main-color);
+  text-decoration: none;
+}
+
+.title-no-active {
+  text-decoration: none;
+}
+
+.title-no-active h2 {
+  color: var(--no-active);
+}
+
 /*********** Start Lateral Menu **********/
 
 .header {
@@ -163,15 +193,12 @@ h4 {
 .nav__btn {
   display: flex;
   margin-top: 1rem;
+  text-decoration: none;
 }
 
 .nav__btn img {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.split-line {
-  border-bottom: 1px solid var(--white);
 }
 
 .footer__cards-icons {
@@ -197,7 +224,8 @@ h4 {
 }
 
 .footer-container {
-  margin-top: 10rem;
+  position: sticky;
+  padding: 1rem;
 }
 
 .footer-logo {
@@ -250,4 +278,66 @@ h4 {
 
 .price-frequency small {
   font-size: 0.7rem;
+}
+
+/*********** End Description Section **********/
+
+/*********** Start Subscription Detail Styles **********/
+
+.subscription-header {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.subscription-header a {
+  margin-right: 2rem;
+}
+
+.subscription-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.subscription-fee p {
+  margin: 1rem 0 0rem 0;
+}
+
+.subscription-img--container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.subscription-delete {
+  text-decoration: none;
+  color: var(--no-active);
+}
+
+/*********** End Subscription Detail Styles **********/
+
+/* --------------------------------------------/
+                   LARGE 992 PX
+\* -------------------------------------------*/
+
+@media screen and (max-width: 992px) {
+  .container {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+  .description-container {
+    margin: 1rem;
+  }
+}
+
+/* --------------------------------------------/
+                   MEDIUM 768 PX
+\* -------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+  .secondary-btn {
+    position: static;
+    width: 100%;
+    padding: 0.5rem;
+  }
 }
