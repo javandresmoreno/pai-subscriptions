@@ -339,5 +339,12 @@ h4 {
     position: static;
     width: 100%;
     padding: 0.5rem;
+    text-align: center;
+  }
+  .subscription-card {
+    grid-template-columns: 1fr;
+  }
+  .img-container img {
+    border-radius: 1rem;
   }
 }
