@@ -48,25 +48,6 @@ h4 {
 |                   UTILITIES 
 \* -------------------------------------------*/
 
-.container {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 2rem;
-  height: 100vh;
-}
-
-.menu {
-  padding: 1rem;
-}
-
-.main-title {
-  font-size: 2.5rem;
-  margin: 1.5rem 0;
-  color: var(--white);
-}
-
 .active {
   background-color: var(--white);
   width: 80%;
@@ -74,24 +55,6 @@ h4 {
   border-radius: 0.5rem;
   cursor: pointer;
   font-weight: bold;
-}
-
-.no-active {
-  color: var(--white);
-}
-
-.no-active > img {
-  filter: brightness(5);
-}
-
-.link-dark {
-  color: var(--white);
-  text-decoration: none;
-}
-
-.white-title {
-  margin-top: 2rem;
-  color: var(--white);
 }
 
 .active-btn {
@@ -112,6 +75,20 @@ h4 {
   margin-left: 2rem;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  height: 100vh;
+}
+
+.link-dark {
+  color: var(--white);
+  text-decoration: none;
+}
+
 .main-btn {
   background-color: var(--main-button);
   padding: 1rem 2rem 1rem 2rem;
@@ -124,6 +101,24 @@ h4 {
   letter-spacing: 0.1rem;
   border-radius: 0.5rem;
   margin-top: 2rem;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+  color: var(--white);
+}
+
+.menu {
+  padding: 1rem;
+}
+
+.no-active {
+  color: var(--white);
+}
+
+.no-active > img {
+  filter: brightness(5);
 }
 
 .secondary-btn {
@@ -161,6 +156,11 @@ h4 {
 
 .title-no-active h2 {
   color: var(--no-active);
+}
+
+.white-title {
+  margin-top: 2rem;
+  color: var(--white);
 }
 
 /*********** Start Lateral Menu **********/
@@ -285,6 +285,80 @@ h4 {
 /*********** End Description Section **********/
 
 /*********** Start Subscription Detail Styles **********/
+
+/*------- Start Carousel ------*/
+
+@keyframes carousel-slide {
+  0% {
+    transform: translateX(0%);
+  }
+  33.33% {
+    transform: translateX(-33.33%);
+  }
+  66.66% {
+    transform: translateX(-66.66%);
+  }
+}
+
+.carousel {
+  width: 100%;
+  border-radius: 1rem;
+  overflow-x: hidden;
+}
+
+.carousel input {
+  display: none;
+}
+
+.carousel label {
+  display: inline-block;
+  margin: 0 0.25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 2px solid var(--main-button);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel .slides {
+  width: 300%;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  transition: transform 0.5s ease-in-out;
+  animation: carousel-slide 9s ease-in-out;
+}
+
+.carousel-img {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#slide-1:checked ~ .slides {
+  transform: translateX(0%);
+}
+
+#slide-2:checked ~ .slides {
+  transform: translateX(-33.33%);
+}
+
+#slide-3:checked ~ .slides {
+  transform: translateX(-66.66%);
+}
+
+#slide-1:checked ~ .slides-nav label#dot-1,
+#slide-2:checked ~ .slides-nav label#dot-2,
+#slide-3:checked ~ .slides-nav label#dot-3 {
+  background-color: var(--main-color);
+}
+
+.slides-nav {
+  text-align: center;
+}
+
+/*------- End Carousel ------*/
 
 .subscription-header {
   display: flex;
