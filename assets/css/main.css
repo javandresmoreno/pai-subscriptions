@@ -1,15 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap");
 
 :root {
+  --black-text: #666666;
   --main-color: #3459ce;
   --soft-color: #c3d1ff;
+  --softly-color: #e3eaff;
   --white: #fff;
+  --soft-gray: rgb(240, 240, 240);
+  --border-gray: rgb(199, 199, 199);
   --active: #c1fdda;
   --active-font: #01a775;
+  --no-active: #808080;
   --main-button: #4e77ff;
   --canceled: rgb(255, 218, 238);
   --canceled-font: rgb(255, 0, 85);
-  --no-active: #808080;
+  --warning: rgb(253, 214, 177);
+  --warning-font: rgb(255, 145, 0);
+  --box-shadow: 5px 5px 10px -1px rgba(0, 0, 0, 0.08);
 }
 
 body {
@@ -19,6 +26,7 @@ body {
   background-color: var(--main-color);
   font-family: "Ubuntu", sans-serif;
   font-size: 16px;
+  color: var(--black-text);
 }
 
 h1 {
@@ -77,7 +85,7 @@ h4 {
   border-radius: 0.5rem;
   font-weight: bold;
   color: var(--active-font);
-  margin-left: 2rem;
+  text-align: center;
 }
 
 .canceled-btn {
@@ -86,7 +94,7 @@ h4 {
   border-radius: 0.5rem;
   font-weight: bold;
   color: var(--canceled-font);
-  margin-left: 2rem;
+  text-align: center;
 }
 
 .container {
@@ -96,6 +104,15 @@ h4 {
   margin: 0 auto;
   margin-top: 2rem;
   height: 100vh;
+}
+
+.discount-btn {
+  background-color: var(--soft-gray);
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: var(--no-active);
+  text-align: center;
 }
 
 .link-dark {
@@ -135,6 +152,26 @@ h4 {
   filter: brightness(5);
 }
 
+.payments-btn {
+  background-color: var(--white);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0 1rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--main-button);
+  letter-spacing: 0.1rem;
+  border-radius: 0.25rem;
+  box-shadow: var(--box-shadow);
+}
+
+.disable {
+  padding: 0;
+  background-color: var(--softly-color);
+  box-shadow: none;
+}
+
 .secondary-btn {
   position: relative;
   left: 25%;
@@ -162,19 +199,36 @@ h4 {
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--main-color);
   text-decoration: none;
+  text-align: center;
 }
 
 .title-no-active {
   text-decoration: none;
+  text-align: center;
 }
 
 .title-no-active h2 {
   color: var(--no-active);
 }
 
+.txt-margin-right {
+  margin-right: 1rem;
+}
+
 .white-title {
   margin-top: 2rem;
   color: var(--white);
+}
+
+.warning-btn {
+  background-color: var(--warning);
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: var(--warning-font);
+  width: 50%;
+  height: fit-content;
+  text-align: center;
 }
 
 /*********** Start Lateral Menu **********/
@@ -264,7 +318,7 @@ h4 {
   grid-template-columns: minmax(150px, 30%) 1fr;
   width: 100%;
   border-radius: 1rem;
-  box-shadow: 5px 5px 10px -1px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--box-shadow);
   margin-bottom: 2.5rem;
 }
 
@@ -282,6 +336,10 @@ h4 {
 .subscription-title {
   display: flex;
   align-items: center;
+}
+
+.subscription-title h3 {
+  margin-right: 2rem;
 }
 
 .price-frequency {
@@ -408,18 +466,55 @@ h4 {
 
 /*********** Start Payment Styles **********/
 
-.credit-card img {
+.credit-card-number img {
   width: 2rem;
+  margin-right: 1rem;
 }
 
 .credit-card-number {
   display: flex;
   align-items: center;
+  margin-top: 1rem;
 }
 
-.credit-card-number {
+.credit-card-owner {
   display: flex;
+  justify-content: space-between;
+}
+
+.nav-type-payments {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: var(--softly-color);
+}
+
+.payments-info--row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.payments-info--row > .active-btn {
+  width: 50%;
+}
+
+.payments-info--row > .canceled-btn {
+  width: 50%;
+}
+
+.payment-success--row {
+  display: flex;
+  align-items: baseline;
+}
+
+.payment-discount--row {
+  display: flex;
+  align-items: baseline;
 }
 
 .payment-method {
@@ -433,6 +528,40 @@ h4 {
 }
 
 /*********** End Payment Styles **********/
+
+/*********** Start Form User Data **********/
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-fieldset {
+  flex: 1 1 180px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-gray);
+}
+
+.form-fieldset--input {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-gray);
+}
+
+.form-fieldset input {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  color: var(--black-text);
+  padding: 0.3rem;
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+/*********** End Form User Data **********/
 /* --------------------------------------------/
                    LARGE 992 PX
 \* -------------------------------------------*/
