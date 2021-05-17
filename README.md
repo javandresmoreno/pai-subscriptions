@@ -1,7 +1,7 @@
 # Pai - Technical Interview ✔
 
 ![Design preview for Pai Subscriptions coding challenge](./assets/img/barre_tribe.jpg)
-![More information](https://pai.lat)
+[More information](https://pai.lat)
 
 ## The challenge
 
